@@ -29,6 +29,9 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
 .rooms a { color: var(--muted); text-decoration: none; }
 .rooms a:hover { color: var(--gold); }
 .rooms span { color: var(--gold); }
+.hear { font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--muted); margin: -8px 0 18px; }
+.hear a { text-decoration: none; }
+.hear a:hover { color: var(--ink); }
 .filters { display: flex; gap: 8px; flex-wrap: wrap; }
 .filters button {
   font: 500 .85rem var(--sans); color: var(--muted); background: transparent;
@@ -90,6 +93,10 @@ aside .look { border-left: 2px solid var(--gold); padding: 2px 0 2px 14px; font-
 aside .look b { display: block; color: var(--gold); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; }
 aside .links { display: flex; flex-direction: column; gap: 8px; font-size: .88rem; }
 aside .hint { color: var(--muted); font-size: .78rem; margin-top: 28px; line-height: 1.5; }
+aside .court { font-size: .95rem; margin: -12px 0 28px; }
+aside .court b { display: block; color: var(--gold); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; font-weight: 500; }
+aside .court a { text-decoration: none; }
+aside .court a:hover { color: var(--ink); }
 aside .credit { color: var(--muted); font-size: .78rem; margin-top: 10px; line-height: 1.5; }
 
 @media (max-width: 800px) {
@@ -112,8 +119,9 @@ aside .credit { color: var(--muted); font-size: .78rem; margin-top: 10px; line-h
 </head>
 <body>
 <header>
-  <nav class="rooms"><a href="index.html">Floor plan</a> · <a href="cities.html">By city</a> | <a href="renaissance.html">Renaissance</a> · <a href="baroque.html">Baroque & Rococo</a> · <a href="romantic.html">Neoclassical & Romantic</a> · <span>Realism & Impressionism</span> | <a href="china.html">China</a> · <a href="japan.html">Japan</a> · <a href="korea.html">Korea</a> | <a href="islamic.html">Islamic World</a> | <a href="india.html">India & South Asia</a> | <a href="southeast.html">Southeast Asia</a> | <a href="africa.html">Africa</a> | <a href="americas.html">The Americas</a></nav>
+  <nav class="rooms"><a href="index.html">Floor plan</a> · <a href="cities.html">By city</a> | <a href="renaissance.html">Renaissance</a> · <a href="baroque.html">Baroque & Rococo</a> · <a href="romantic.html">Neoclassical & Romantic</a> · <span>Realism & Impressionism</span> | <a href="china.html">China</a> · <a href="japan.html">Japan</a> · <a href="korea.html">Korea</a> | <a href="islamic.html">Islamic World</a> | <a href="india.html">India & South Asia</a> | <a href="southeast.html">Southeast Asia</a> | <a href="africa.html">Africa</a> | <a href="americas.html">The Americas</a> | <a href="court-music.html">Music Hall</a></nav>
   <h1>Sixty Realist and Impressionist Paintings</h1>
+  <p class="hear">In the Music Hall: <a href="court-music.html#europe">the court music of Europe</a></p>
   <div class="filters" role="group" aria-label="Filter">
     <button data-f="all" aria-pressed="true">All 60</button>
     <button data-f="French" aria-pressed="false">French 29</button>
@@ -244,6 +252,7 @@ function open(i, push = true) {
     ${p.wide ? `<p class="scrollnote">${p.handscroll ? 'A handscroll, read from right to left. Scroll or swipe to unroll it.' : 'A long work. Scroll or swipe to move along it.'}</p>` : ''}
     <p class="desc">${esc(p.desc)}</p>
     <div class="look"><b>Look for</b>${esc(p.look)}</div>
+    ${(p.courts || []).map(c => `<p class="court"><b>Court music</b><a href="${c.href}">${esc(c.name)}, ${esc(c.city)}</a></p>`).join('')}
     <div class="links">
       ${p.wiki ? `<a href="${p.wiki}" target="_blank" rel="noopener">Read more on Wikipedia</a>` : ''}
       <a href="${p.commons}" target="_blank" rel="noopener">${p.credit ? 'Image source' : 'Full-resolution original'}</a>

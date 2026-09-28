@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Twelve Rooms of Painting</title>
+<title>Art and Music</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -28,6 +28,9 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
 /* Floor plan: one wing per outer wall, a doorway in each dividing wall; a room is a quarter of the page wide */
 .wing { margin: 0 0 44px; }
 .wing-name { font: 500 .78rem var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin: 0 0 12px; }
+.wing-name .hear { margin-left: 14px; color: var(--muted); text-decoration: none; letter-spacing: .1em; }
+.wing-name .hear::before { content: "♪ "; }
+.wing-name .hear:hover { color: var(--ink); }
 .plan { display: grid; grid-template-columns: repeat(var(--n), 1fr); width: calc(100% * var(--n) / 4); border: 3px solid var(--wall); position: relative; }
 .room {
   position: relative; display: flex; flex-direction: column; align-items: center; text-align: center;
@@ -64,9 +67,10 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
 </head>
 <body>
 <div class="wrap">
-  <h1>Twelve Rooms of Painting</h1>
+  <h1>Art and Music</h1>
   <div class="intro">
     <p>720 works in twelve rooms of 60. Four rooms follow European painting from 1400 to 1900. The East Asia wing holds a thousand years of Chinese painting and calligraphy, twelve centuries of Japanese art, and fifteen centuries of Korean art. The Islamic World wing holds twelve centuries of art from Spain and West Africa to Iran, Central Asia and Indonesia. The South Asia wing holds more than two thousand years of art from India, Pakistan, Bangladesh, Sri Lanka, Nepal and Tibet. The Southeast Asia wing holds nearly three thousand years of art from Myanmar, Thailand, Laos, Cambodia, Vietnam, Malaysia, Indonesia, Timor-Leste and the Philippines. The Africa wing holds some thirty thousand years of art from across the continent, from the rock paintings of Namibia and the Sahara to Egypt and Nubia on the Nile, the kingdoms of West and Central Africa, Ethiopia, Great Zimbabwe and the Swahili coast. The Americas wing holds some three thousand years of art from Alaska to the Andes, from the Olmec and the Maya to the Inca, the Mexica, the peoples of North America and the painters of the colonial and independent Americas.</p>
+    <p>The Music Hall is a map of 41 royal courts and the music they paid for, from Versailles and Topkapı to Fatehpur Sikri, the Forbidden City, the kraton of Yogyakarta and the Asante court at Kumasi. It follows Lewis Peterman’s seminar Court Music of Eurasia (San Diego State University, 2008), and links each court to works in these rooms from the same court.</p>
     <p>In the 1400s, the Renaissance brought a renewed interest in ancient Greece and Rome, the human figure, nature, and the world as it actually looked. Painters in Italy and Flanders set out to make a flat surface look like a window, using perspective, realism, and increasingly sophisticated oil paint. In the 1600s, many turned to drama, with deep shadows, strong light, movement, and emotion, while Dutch painters increasingly depicted ordinary rooms, people, landscapes, and everyday life. In the late 1700s and early 1800s, some painters returned to the calm order of ancient Greece and Rome, while others pursued emotion, imagination, and wild nature. By the late 1800s, painters had increasingly left the studio to paint modern life and changing light, and a picture no longer had to look polished or “finished.”</p>
     <p>In China, painting and calligraphy were sister arts, made with the same brush and ink on silk or paper. Many of the greatest works are handscrolls, unrolled an arm’s length at a time from right to left, or hanging scrolls and album leaves. Landscape became the leading subject in the Song dynasty. Later owners added their seals and written comments, so a scroll often carries its own history.</p>
     <p>In Japan, artists took in Buddhist painting and Chinese ink painting and made forms of their own. Court painters told long stories in illustrated handscrolls, Zen monks painted in ink, and from the late 1500s artists covered folding screens and sliding doors with gold leaf. Calligraphy, tea bowls and lacquer ranked alongside painting. In the 1700s and 1800s, color woodblock prints brought actors, beauties and landscapes to buyers in the cities.</p>
@@ -78,7 +82,7 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
     <p>In the Americas, the Olmec carved colossal heads more than three thousand years ago, and Maya courts at Tikal, Copán and Yaxchilan built temples and carved their histories in stone and wood. In the Andes, weavers made cloth the most valued art, and from the 1400s the Inca ruled from Cusco, built in fitted stone and kept records on knotted cords called khipu. The Mexica ruled from Tenochtitlan until Spanish forces and their Indigenous allies took the city in 1521, and Spain took the Inca empire in the 1530s. Spain and Portugal ruled most of Central and South America for three centuries, and Indigenous and mestizo artists painted for churches in Cusco and Mexico City. By 1600 Spanish America had shipped 25,000 tons of silver to Spain, and maize and potatoes became staple crops around the world. The United States drove nations such as the Diné and Lakota from their lands, Canada banned the potlatch of the Kwakwaka&#x27;wakw and their neighbors, and those nations kept weaving, beading and carving. In the 1800s painters such as José María Velasco and Francisco Oller painted their own countries. Works left by conquest, excavation and seizure, from Moctezuma&#x27;s headdress to the Kwakwaka&#x27;wakw regalia seized in 1922; Yale returned its Machu Picchu collection to Peru in 2011–12, and Mexico recovered 14,048 objects from abroad between 2018 and 2024.</p>
   </div>
   <section class="wing">
-  <h2 class="wing-name">Europe</h2>
+  <h2 class="wing-name">Europe <a class="hear" href="court-music.html#europe">Court music</a></h2>
   <nav class="plan" style="--n:4" aria-label="Europe rooms">
     <a class="room" href="renaissance.html">
       <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/960px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg" alt="The Birth of Venus by Sandro Botticelli" loading="lazy"></div>
@@ -115,7 +119,7 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
   </nav>
   </section>
   <section class="wing">
-  <h2 class="wing-name">East Asia</h2>
+  <h2 class="wing-name">East Asia <a class="hear" href="court-music.html#east_asia">Court music</a></h2>
   <nav class="plan" style="--n:3" aria-label="East Asia rooms">
     <a class="room" href="china.html">
       <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/%E8%B0%BF%E5%B1%B1%E8%A1%8C%E6%97%85%E5%9B%BE%E8%BD%B4.%E6%BA%AA%E5%B1%B1%E8%A1%8C%E6%97%85%E5%9B%BE.%E5%AE%8B.%E8%8C%83%E5%AE%BD.%E7%BB%A2%E6%9C%AC%E6%B5%85%E8%AE%BE%E8%89%B2.%E5%8F%B0%E5%8C%97%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%99%A2%E8%97%8F.jpg/960px-%E8%B0%BF%E5%B1%B1%E8%A1%8C%E6%97%85%E5%9B%BE%E8%BD%B4.%E6%BA%AA%E5%B1%B1%E8%A1%8C%E6%97%85%E5%9B%BE.%E5%AE%8B.%E8%8C%83%E5%AE%BD.%E7%BB%A2%E6%9C%AC%E6%B5%85%E8%AE%BE%E8%89%B2.%E5%8F%B0%E5%8C%97%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%99%A2%E8%97%8F.jpg" alt="Travelers among Mountains and Streams by Fan Kuan" loading="lazy"></div>
@@ -144,7 +148,7 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
   </nav>
   </section>
   <section class="wing">
-  <h2 class="wing-name">Islamic World</h2>
+  <h2 class="wing-name">Islamic World <a class="hear" href="court-music.html#middle_east">Court music</a></h2>
   <nav class="plan" style="--n:1" aria-label="Islamic World rooms">
     <a class="room" href="islamic.html">
       <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Folio_from_the_Blue_Qur%27an_%28CBL_Is_1405A%2C_f._1b%29.jpg/960px-Folio_from_the_Blue_Qur%27an_%28CBL_Is_1405A%2C_f._1b%29.jpg" alt="Folio from the Blue Qur&#x27;an by Unknown scribe and gilder" loading="lazy"></div>
@@ -157,7 +161,7 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
   </nav>
   </section>
   <section class="wing">
-  <h2 class="wing-name">South Asia</h2>
+  <h2 class="wing-name">South Asia <a class="hear" href="court-music.html#south_asia">Court music</a></h2>
   <nav class="plan" style="--n:1" aria-label="South Asia rooms">
     <a class="room" href="india.html">
       <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/South_India%2C_Tamil_Nadu%2C_Chola_period_-_Nataraja%2C_Shiva_as_the_Lord_of_Dance_-_1930.331_-_Cleveland_Museum_of_Art.tif/lossy-page1-960px-South_India%2C_Tamil_Nadu%2C_Chola_period_-_Nataraja%2C_Shiva_as_the_Lord_of_Dance_-_1930.331_-_Cleveland_Museum_of_Art.tif.jpg" alt="Nataraja, Shiva as the Lord of Dance by Unknown Chola bronze caster" loading="lazy"></div>
@@ -170,7 +174,7 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
   </nav>
   </section>
   <section class="wing">
-  <h2 class="wing-name">Southeast Asia</h2>
+  <h2 class="wing-name">Southeast Asia <a class="hear" href="court-music.html#southeast_asia">Court music</a></h2>
   <nav class="plan" style="--n:1" aria-label="Southeast Asia rooms">
     <a class="room" href="southeast.html">
       <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Angkor_Wat_with_its_reflection_%28cropped%29.jpg/960px-Angkor_Wat_with_its_reflection_%28cropped%29.jpg" alt="Angkor Wat by Unknown Khmer builders" loading="lazy"></div>
@@ -183,7 +187,7 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
   </nav>
   </section>
   <section class="wing">
-  <h2 class="wing-name">Africa</h2>
+  <h2 class="wing-name">Africa <a class="hear" href="court-music.html#africa">Court music</a></h2>
   <nav class="plan" style="--n:1" aria-label="Africa rooms">
     <a class="room" href="africa.html">
       <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/British_Museum_Room_25_Head_of_a_king_Ife_17022019_5147.jpg/960px-British_Museum_Room_25_Head_of_a_king_Ife_17022019_5147.jpg" alt="Head of a Ruler, probably an Ooni (king) of Ife by Unknown Ife brass caster, royal court" loading="lazy"></div>
@@ -205,6 +209,19 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
       <p class="dates">1200 BCE–1913</p>
       <p class="count">60 works</p>
       <p class="pic">Aztec Sun Stone, Unknown Mexica sculptors of Tenochtitlan</p>
+    </a>
+  </nav>
+  </section>
+  <section class="wing">
+  <h2 class="wing-name">Music Hall</h2>
+  <nav class="plan" style="--n:1" aria-label="Music Hall rooms">
+    <a class="room" href="court-music.html">
+      <div class="frame"><img src="music/hall.jpg" alt="Music room, Ali Qapu Palace, Isfahan" loading="lazy"></div>
+      <p class="num">Music Hall</p>
+      <h2>Court Music</h2>
+      <p class="dates">Europe, Asia and Africa</p>
+      <p class="count">41 courts</p>
+      <p class="pic">Music room, Ali Qapu Palace, Isfahan</p>
     </a>
   </nav>
   </section>
