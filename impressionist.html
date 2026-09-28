@@ -97,6 +97,7 @@ aside .court { font-size: .95rem; margin: -12px 0 28px; }
 aside .court b { display: block; color: var(--gold); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; font-weight: 500; }
 aside .court a { text-decoration: none; }
 aside .court a:hover { color: var(--ink); }
+aside .court .note { display: block; color: var(--muted); font-size: .85rem; margin-top: 2px; }
 aside .credit { color: var(--muted); font-size: .78rem; margin-top: 10px; line-height: 1.5; }
 
 @media (max-width: 800px) {
@@ -252,7 +253,7 @@ function open(i, push = true) {
     ${p.wide ? `<p class="scrollnote">${p.handscroll ? 'A handscroll, read from right to left. Scroll or swipe to unroll it.' : 'A long work. Scroll or swipe to move along it.'}</p>` : ''}
     <p class="desc">${esc(p.desc)}</p>
     <div class="look"><b>Look for</b>${esc(p.look)}</div>
-    ${(p.courts || []).map(c => `<p class="court"><b>Court music</b><a href="${c.href}">${esc(c.name)}, ${esc(c.city)}</a></p>`).join('')}
+    ${(p.courts || []).map(c => `<p class="court"><b>Court music</b><a href="${c.href}">${esc(c.name)}, ${esc(c.city)}</a>${c.note ? `<span class="note">${esc(c.note)}</span>` : ''}</p>`).join('')}
     <div class="links">
       ${p.wiki ? `<a href="${p.wiki}" target="_blank" rel="noopener">Read more on Wikipedia</a>` : ''}
       <a href="${p.commons}" target="_blank" rel="noopener">${p.credit ? 'Image source' : 'Full-resolution original'}</a>
