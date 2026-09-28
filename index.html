@@ -20,10 +20,20 @@
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); }
-.wrap { max-width: 1240px; margin: 0 auto; padding: 56px 24px 80px; }
-h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 3.6rem); margin: 0 0 22px; letter-spacing: .01em; }
-.intro { max-width: 760px; font-size: 1.02rem; line-height: 1.7; margin: 0 0 56px; }
-.intro p { margin: 0 0 14px; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 44px 24px 80px; }
+h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 3.6rem); margin: 0 0 8px; letter-spacing: .01em; }
+.lede { font-size: 1.05rem; color: var(--muted); margin: 0 0 40px; }
+.lede a { color: var(--gold); text-decoration: none; margin-left: 10px; letter-spacing: .06em; text-transform: uppercase; font-size: .85rem; }
+.lede a:hover { color: var(--ink); }
+.wing-text { max-width: 760px; margin: 12px 0 0; }
+.wing-text summary { cursor: pointer; font: 500 .85rem var(--sans); color: var(--muted); letter-spacing: .04em; list-style: none; }
+.wing-text summary::-webkit-details-marker { display: none; }
+.wing-text summary::before { content: "+ "; color: var(--gold); }
+.wing-text[open] summary::before { content: "− "; }
+.wing-text summary:hover { color: var(--ink); }
+.wing-text p, .about p { font-size: 1rem; line-height: 1.7; margin: 12px 0 0; }
+.about { max-width: 760px; margin: 64px 0 0; padding-top: 28px; border-top: 1px solid var(--line); }
+.about h2 { font: 500 .78rem var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin: 0; }
 
 /* Floor plan: one wing per outer wall, a doorway in each dividing wall; a room is a quarter of the page wide */
 .wing { margin: 0 0 44px; }
@@ -42,8 +52,8 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
 }
 .room:hover, .room:focus-visible { background: #1d1915; outline: none; }
 .room:hover::before, .room:focus-visible::before { background: #1d1915; }
-.frame { height: 170px; display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
-.frame img { max-height: 170px; max-width: 100%; border: 5px solid #2a241d; box-shadow: 0 6px 18px rgba(0,0,0,.5); display: block; transition: border-color .25s; }
+.frame { height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
+.frame img { max-height: 200px; max-width: 100%; border: 5px solid #2a241d; box-shadow: 0 6px 18px rgba(0,0,0,.5); display: block; transition: border-color .25s; }
 .room:hover .frame img, .room:focus-visible .frame img { border-color: var(--gold); }
 .num { font: 500 .72rem var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
 .room h2 { font-family: var(--serif); font-weight: 600; font-size: 1.55rem; line-height: 1.15; margin: 0 0 6px; }
@@ -68,24 +78,12 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
 <body>
 <div class="wrap">
   <h1>Art and Music</h1>
-  <div class="intro">
-    <p>720 works in twelve rooms of 60. Four rooms follow European painting from 1400 to 1900. The East Asia wing holds a thousand years of Chinese painting and calligraphy, twelve centuries of Japanese art, and fifteen centuries of Korean art. The Islamic World wing holds twelve centuries of art from Spain and West Africa to Iran, Central Asia and Indonesia. The South Asia wing holds more than two thousand years of art from India, Pakistan, Bangladesh, Sri Lanka, Nepal and Tibet. The Southeast Asia wing holds nearly three thousand years of art from Myanmar, Thailand, Laos, Cambodia, Vietnam, Malaysia, Indonesia, Timor-Leste and the Philippines. The Africa wing holds some thirty thousand years of art from across the continent, from the rock paintings of Namibia and the Sahara to Egypt and Nubia on the Nile, the kingdoms of West and Central Africa, Ethiopia, Great Zimbabwe and the Swahili coast. The Americas wing holds some three thousand years of art from Alaska to the Andes, from the Olmec and the Maya to the Inca, the Mexica, the peoples of North America and the painters of the colonial and independent Americas.</p>
-    <p>The Music Hall is a map of 41 royal courts and the music they paid for, from Versailles and Topkapı to Fatehpur Sikri, the Forbidden City, the kraton of Yogyakarta and the Asante court at Kumasi. It follows Lewis Peterman’s seminar Court Music of Eurasia (San Diego State University, 2008), and links courts to works in these rooms from the same court.</p>
-    <p>In the 1400s, the Renaissance brought a renewed interest in ancient Greece and Rome, the human figure, nature, and the world as it actually looked. Painters in Italy and Flanders set out to make a flat surface look like a window, using perspective, realism, and increasingly sophisticated oil paint. In the 1600s, many turned to drama, with deep shadows, strong light, movement, and emotion, while Dutch painters increasingly depicted ordinary rooms, people, landscapes, and everyday life. In the late 1700s and early 1800s, some painters returned to the calm order of ancient Greece and Rome, while others pursued emotion, imagination, and wild nature. By the late 1800s, painters had increasingly left the studio to paint modern life and changing light, and a picture no longer had to look polished or “finished.”</p>
-    <p>In China, painting and calligraphy were sister arts, made with the same brush and ink on silk or paper. Many of the greatest works are handscrolls, unrolled an arm’s length at a time from right to left, or hanging scrolls and album leaves. Landscape became the leading subject in the Song dynasty. Later owners added their seals and written comments, so a scroll often carries its own history.</p>
-    <p>In Japan, artists took in Buddhist painting and Chinese ink painting and made forms of their own. Court painters told long stories in illustrated handscrolls, Zen monks painted in ink, and from the late 1500s artists covered folding screens and sliding doors with gold leaf. Calligraphy, tea bowls and lacquer ranked alongside painting. In the 1700s and 1800s, color woodblock prints brought actors, beauties and landscapes to buyers in the cities.</p>
-    <p>In Korea, the oldest paintings are the walls of Goguryeo tombs from the 300s to the 600s. Goryeo painters made Buddhist paintings in gold and color, and Goryeo potters made celadon inlaid with white and black clay. In the Joseon dynasty, Jeong Seon painted Korea&#x27;s own mountains as they looked, Kim Hong-do and Sin Yun-bok painted everyday life, and King Sejong gave Korean its own alphabet. Court screens stood behind the throne, and folk paintings of tigers, magpies and written characters hung in ordinary homes.</p>
-    <p>In the Islamic world, calligraphy was the highest art, because it carried the words of the Qur&#x27;an. Scribes wrote from right to left in Kufic, naskh, thuluth and nasta’liq, and the same writing ran across paper, tile, metal, glass and carpet. Mosques were lined with mosaic and tile, and domes were built up from small stacked niches called muqarnas. Court painters in Tabriz, Herat, Isfahan and Istanbul illustrated histories and poems, and collectors gathered paintings and calligraphy into albums.</p>
-    <p>In South Asia, rulers and donors paid for art as acts of piety and power, from the stone pillars of the Maurya emperor Ashoka in the 200s BCE to the carved stupas at Sanchi and the painted caves at Ajanta. Monks and merchants carried Buddhism and its images to Sri Lanka, Central Asia, China and Southeast Asia, and printed and dyed cotton from Gujarat and the Coromandel coast was traded from Egypt to Indonesia. From the 400s kings built stone temples where worshippers came for darshan, to see the image of the god and be seen by it, and from 1526 the Mughal emperors brought Persian painters to a court workshop whose portraits Rembrandt copied in Amsterdam in the late 1650s. In the late 1700s, as the East India Company took power in Bengal by war and by collecting its taxes, painters who had worked for Mughal and regional courts painted for Company officials instead. Works left by conquest, from Tipu Sultan’s tiger organ seized at Seringapatam in 1799 to the Koh-i-Noor diamond taken from the Sikh kingdom in 1849, and in 1879 the Company’s India Museum in London passed 19,228 objects to the museum now called the V&amp;A.</p>
-    <p>In Southeast Asia, bronze drums and burial jars came long before writing. From the 600s, kings took up Hindu and Buddhist ideas from India and built temples of their own, from Borobudur in Java to Angkor Wat in Cambodia and the thousands of temples at Bagan in Myanmar, and in the 800s Balaputradeva, a king of Srivijaya on Sumatra, had a Buddhist monastery built at Nalanda in India. In Vietnam, the Đại Việt court took Buddhism and Chinese forms and made them its own. Women wove and dyed cloth such as batik, ikat and tais, and shadow puppets, lacquer and gold ranked alongside painting. Spain and then the United States ruled the Philippines, the Netherlands ruled Indonesia, Britain took Burma and Malaya, and France took Vietnam, Cambodia and Laos; Siam alone kept its independence. From 1830 the Dutch forced Javanese villagers to grow coffee, sugar and indigo for export, and at its peak this system paid for half the Dutch state&#x27;s revenue. British troops seized the royal collection at Mandalay in 1885, and Dutch troops looted the palace at Cakranegara on Lombok in 1894. In 1857 Raden Saleh painted The Arrest of Prince Diponegoro, which scholars read as an answer to a Dutch version by Nicolaas Pieneman, and in 1884 Juan Luna won a gold medal in Madrid for the Spoliarium. In 2023 the Netherlands returned the Lombok treasure, 335 objects, and four statues from Singasari to Indonesia.</p>
-    <p>In Africa, people painted and carved on rock for tens of thousands of years. On the Nile, Egypt and the Nubian kingdom of Kush built pyramids and temples, and in the 700s BCE the kings of Kush conquered Egypt and ruled it as pharaohs. Brass casters at Ife and Benin made royal heads and plaques, Ethiopian painters filled Gospel books and church walls, and from the late 1400s carvers in Sierra Leone and Benin made ivory saltcellars for Portuguese buyers. The Atlantic slave trade carried millions of Africans to the Americas, and after the Berlin Conference of 1884–85 seven European powers took all of Africa but Ethiopia and Liberia by 1914. Picasso and other painters in Paris took forms from masks brought to France through colonial channels, while in 1928 Mahmoud Mokhtar unveiled Egypt’s Awakening in Cairo, paid for by public subscription after the 1919 revolution against British rule. Works left by conquest, from the Abomey treasury taken by French troops in 1892 to the Benin bronzes seized by British troops in 1897, and a 2018 report to the French president cited experts’ estimate that over 90 percent of sub-Saharan Africa’s heritage is held outside the continent; France returned 26 Abomey treasures in 2021 and Germany began returning Benin bronzes to Nigeria in 2022.</p>
-    <p>In the Americas, the Olmec carved colossal heads more than three thousand years ago, and Maya courts at Tikal, Copán and Yaxchilan built temples and carved their histories in stone and wood. In the Andes, weavers made cloth the most valued art, and from the 1400s the Inca ruled from Cusco, built in fitted stone and kept records on knotted cords called khipu. The Mexica ruled from Tenochtitlan until Spanish forces and their Indigenous allies took the city in 1521, and Spain took the Inca empire in the 1530s. Spain and Portugal ruled most of Central and South America for three centuries, and Indigenous and mestizo artists painted for churches in Cusco and Mexico City. By 1600 Spanish America had shipped 25,000 tons of silver to Spain, and maize and potatoes became staple crops around the world. The United States drove nations such as the Diné and Lakota from their lands, Canada banned the potlatch of the Kwakwaka&#x27;wakw and their neighbors, and those nations kept weaving, beading and carving. In the 1800s painters such as José María Velasco and Francisco Oller painted their own countries. Works left by conquest, excavation and seizure, from Moctezuma&#x27;s headdress to the Kwakwaka&#x27;wakw regalia seized in 1922; Yale returned its Machu Picchu collection to Peru in 2011–12, and Mexico recovered 14,048 objects from abroad between 2018 and 2024.</p>
-  </div>
+  <p class="lede">720 works in 12 rooms, and a Music Hall of 41 royal courts. <a href="cities.html">By city</a> <a href="court-music.html">Music Hall</a></p>
   <section class="wing">
   <h2 class="wing-name">Europe <a class="hear" href="court-music.html#europe">Court music</a></h2>
   <nav class="plan" style="--n:4" aria-label="Europe rooms">
     <a class="room" href="renaissance.html">
-      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/960px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg" alt="The Birth of Venus by Sandro Botticelli" loading="lazy"></div>
+      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/960px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg" alt="The Birth of Venus by Sandro Botticelli"></div>
       <p class="num">Room 1</p>
       <h2>Renaissance</h2>
       <p class="dates">1400–1600</p>
@@ -93,7 +91,7 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
       <p class="pic">The Birth of Venus, Botticelli</p>
     </a>
     <a class="room" href="baroque.html">
-      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg/960px-Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg" alt="Las Meninas by Diego Velázquez" loading="lazy"></div>
+      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg/960px-Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg" alt="Las Meninas by Diego Velázquez"></div>
       <p class="num">Room 2</p>
       <h2>Baroque &amp; Rococo</h2>
       <p class="dates">1600–1750</p>
@@ -101,7 +99,7 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
       <p class="pic">Las Meninas, Velázquez</p>
     </a>
     <a class="room" href="romantic.html">
-      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog.jpeg/960px-Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog.jpeg" alt="Wanderer above the Sea of Fog by Caspar David Friedrich" loading="lazy"></div>
+      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog.jpeg/960px-Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog.jpeg" alt="Wanderer above the Sea of Fog by Caspar David Friedrich"></div>
       <p class="num">Room 3</p>
       <h2>Neoclassical &amp; Romantic</h2>
       <p class="dates">1750–1850</p>
@@ -109,7 +107,7 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
       <p class="pic">Wanderer above the Sea of Fog, Friedrich</p>
     </a>
     <a class="room" href="impressionist.html">
-      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Monet_-_Impression%2C_Sunrise.jpg/960px-Monet_-_Impression%2C_Sunrise.jpg" alt="Impression, Sunrise by Claude Monet" loading="lazy"></div>
+      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Monet_-_Impression%2C_Sunrise.jpg/960px-Monet_-_Impression%2C_Sunrise.jpg" alt="Impression, Sunrise by Claude Monet"></div>
       <p class="num">Room 4</p>
       <h2>Realism &amp; Impressionism</h2>
       <p class="dates">1850–1900</p>
@@ -117,12 +115,15 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
       <p class="pic">Impression, Sunrise, Monet</p>
     </a>
   </nav>
+  <details class="wing-text"><summary>About the Europe wing</summary>
+    <p>In the 1400s, the Renaissance brought a renewed interest in ancient Greece and Rome, the human figure, nature, and the world as it actually looked. Painters in Italy and Flanders set out to make a flat surface look like a window, using perspective, realism, and increasingly sophisticated oil paint. In the 1600s, many turned to drama, with deep shadows, strong light, movement, and emotion, while Dutch painters increasingly depicted ordinary rooms, people, landscapes, and everyday life. In the late 1700s and early 1800s, some painters returned to the calm order of ancient Greece and Rome, while others pursued emotion, imagination, and wild nature. By the late 1800s, painters had increasingly left the studio to paint modern life and changing light, and a picture no longer had to look polished or “finished.”</p>
+  </details>
   </section>
   <section class="wing">
   <h2 class="wing-name">East Asia <a class="hear" href="court-music.html#east_asia">Court music</a></h2>
   <nav class="plan" style="--n:3" aria-label="East Asia rooms">
     <a class="room" href="china.html">
-      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/%E8%B0%BF%E5%B1%B1%E8%A1%8C%E6%97%85%E5%9B%BE%E8%BD%B4.%E6%BA%AA%E5%B1%B1%E8%A1%8C%E6%97%85%E5%9B%BE.%E5%AE%8B.%E8%8C%83%E5%AE%BD.%E7%BB%A2%E6%9C%AC%E6%B5%85%E8%AE%BE%E8%89%B2.%E5%8F%B0%E5%8C%97%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%99%A2%E8%97%8F.jpg/960px-%E8%B0%BF%E5%B1%B1%E8%A1%8C%E6%97%85%E5%9B%BE%E8%BD%B4.%E6%BA%AA%E5%B1%B1%E8%A1%8C%E6%97%85%E5%9B%BE.%E5%AE%8B.%E8%8C%83%E5%AE%BD.%E7%BB%A2%E6%9C%AC%E6%B5%85%E8%AE%BE%E8%89%B2.%E5%8F%B0%E5%8C%97%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%99%A2%E8%97%8F.jpg" alt="Travelers among Mountains and Streams by Fan Kuan" loading="lazy"></div>
+      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/%E8%B0%BF%E5%B1%B1%E8%A1%8C%E6%97%85%E5%9B%BE%E8%BD%B4.%E6%BA%AA%E5%B1%B1%E8%A1%8C%E6%97%85%E5%9B%BE.%E5%AE%8B.%E8%8C%83%E5%AE%BD.%E7%BB%A2%E6%9C%AC%E6%B5%85%E8%AE%BE%E8%89%B2.%E5%8F%B0%E5%8C%97%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%99%A2%E8%97%8F.jpg/960px-%E8%B0%BF%E5%B1%B1%E8%A1%8C%E6%97%85%E5%9B%BE%E8%BD%B4.%E6%BA%AA%E5%B1%B1%E8%A1%8C%E6%97%85%E5%9B%BE.%E5%AE%8B.%E8%8C%83%E5%AE%BD.%E7%BB%A2%E6%9C%AC%E6%B5%85%E8%AE%BE%E8%89%B2.%E5%8F%B0%E5%8C%97%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%99%A2%E8%97%8F.jpg" alt="Travelers among Mountains and Streams by Fan Kuan"></div>
       <p class="num">Room 5</p>
       <h2>China</h2>
       <p class="dates">900–1900</p>
@@ -130,7 +131,7 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
       <p class="pic">Travelers among Mountains and Streams, Fan Kuan</p>
     </a>
     <a class="room" href="japan.html">
-      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/The_Great_Wave_at_Kanagawa_%28from_a_Series_of_Thirty-six_Views_of_Mount_Fuji%29.tiff/lossy-page1-960px-The_Great_Wave_at_Kanagawa_%28from_a_Series_of_Thirty-six_Views_of_Mount_Fuji%29.tiff.jpg" alt="Under the Wave off Kanagawa (The Great Wave) by Katsushika Hokusai" loading="lazy"></div>
+      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/The_Great_Wave_at_Kanagawa_%28from_a_Series_of_Thirty-six_Views_of_Mount_Fuji%29.tiff/lossy-page1-960px-The_Great_Wave_at_Kanagawa_%28from_a_Series_of_Thirty-six_Views_of_Mount_Fuji%29.tiff.jpg" alt="Under the Wave off Kanagawa (The Great Wave) by Katsushika Hokusai"></div>
       <p class="num">Room 6</p>
       <h2>Japan</h2>
       <p class="dates">700–1900</p>
@@ -138,7 +139,7 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
       <p class="pic">Under the Wave off Kanagawa (The Great Wave), Katsushika Hokusai</p>
     </a>
     <a class="room" href="korea.html">
-      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Inwangjesaekdo.jpg/960px-Inwangjesaekdo.jpg" alt="Clearing after Rain on Mount Inwang by Jeong Seon" loading="lazy"></div>
+      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Inwangjesaekdo.jpg/960px-Inwangjesaekdo.jpg" alt="Clearing after Rain on Mount Inwang by Jeong Seon"></div>
       <p class="num">Room 7</p>
       <h2>Korea</h2>
       <p class="dates">400–1910</p>
@@ -146,12 +147,17 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
       <p class="pic">Clearing after Rain on Mount Inwang, Jeong Seon</p>
     </a>
   </nav>
+  <details class="wing-text"><summary>About the East Asia wing</summary>
+    <p>In China, painting and calligraphy were sister arts, made with the same brush and ink on silk or paper. Many of the greatest works are handscrolls, unrolled an arm’s length at a time from right to left, or hanging scrolls and album leaves. Landscape became the leading subject in the Song dynasty. Later owners added their seals and written comments, so a scroll often carries its own history.</p>
+    <p>In Japan, artists took in Buddhist painting and Chinese ink painting and made forms of their own. Court painters told long stories in illustrated handscrolls, Zen monks painted in ink, and from the late 1500s artists covered folding screens and sliding doors with gold leaf. Calligraphy, tea bowls and lacquer ranked alongside painting. In the 1700s and 1800s, color woodblock prints brought actors, beauties and landscapes to buyers in the cities.</p>
+    <p>In Korea, the oldest paintings are the walls of Goguryeo tombs from the 300s to the 600s. Goryeo painters made Buddhist paintings in gold and color, and Goryeo potters made celadon inlaid with white and black clay. In the Joseon dynasty, Jeong Seon painted Korea&#x27;s own mountains as they looked, Kim Hong-do and Sin Yun-bok painted everyday life, and King Sejong gave Korean its own alphabet. Court screens stood behind the throne, and folk paintings of tigers, magpies and written characters hung in ordinary homes.</p>
+  </details>
   </section>
   <section class="wing">
   <h2 class="wing-name">Islamic World <a class="hear" href="court-music.html#middle_east">Court music</a></h2>
   <nav class="plan" style="--n:1" aria-label="Islamic World rooms">
     <a class="room" href="islamic.html">
-      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Folio_from_the_Blue_Qur%27an_%28CBL_Is_1405A%2C_f._1b%29.jpg/960px-Folio_from_the_Blue_Qur%27an_%28CBL_Is_1405A%2C_f._1b%29.jpg" alt="Folio from the Blue Qur&#x27;an by Scribe and gilder of the Blue Qur&#x27;an" loading="lazy"></div>
+      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Folio_from_the_Blue_Qur%27an_%28CBL_Is_1405A%2C_f._1b%29.jpg/960px-Folio_from_the_Blue_Qur%27an_%28CBL_Is_1405A%2C_f._1b%29.jpg" alt="Folio from the Blue Qur&#x27;an by Scribe and gilder of the Blue Qur&#x27;an"></div>
       <p class="num">Room 8</p>
       <h2>Islamic World</h2>
       <p class="dates">690–1910</p>
@@ -159,12 +165,15 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
       <p class="pic">Folio from the Blue Qur&#x27;an, Scribe and gilder of the Blue Qur&#x27;an</p>
     </a>
   </nav>
+  <details class="wing-text"><summary>About the Islamic World wing</summary>
+    <p>In the Islamic world, calligraphy was the highest art, because it carried the words of the Qur&#x27;an. Scribes wrote from right to left in Kufic, naskh, thuluth and nasta’liq, and the same writing ran across paper, tile, metal, glass and carpet. Mosques were lined with mosaic and tile, and domes were built up from small stacked niches called muqarnas. Court painters in Tabriz, Herat, Isfahan and Istanbul illustrated histories and poems, and collectors gathered paintings and calligraphy into albums.</p>
+  </details>
   </section>
   <section class="wing">
   <h2 class="wing-name">South Asia <a class="hear" href="court-music.html#south_asia">Court music</a></h2>
   <nav class="plan" style="--n:1" aria-label="South Asia rooms">
     <a class="room" href="india.html">
-      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/South_India%2C_Tamil_Nadu%2C_Chola_period_-_Nataraja%2C_Shiva_as_the_Lord_of_Dance_-_1930.331_-_Cleveland_Museum_of_Art.tif/lossy-page1-960px-South_India%2C_Tamil_Nadu%2C_Chola_period_-_Nataraja%2C_Shiva_as_the_Lord_of_Dance_-_1930.331_-_Cleveland_Museum_of_Art.tif.jpg" alt="Nataraja, Shiva as the Lord of Dance by Chola bronze caster" loading="lazy"></div>
+      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/South_India%2C_Tamil_Nadu%2C_Chola_period_-_Nataraja%2C_Shiva_as_the_Lord_of_Dance_-_1930.331_-_Cleveland_Museum_of_Art.tif/lossy-page1-960px-South_India%2C_Tamil_Nadu%2C_Chola_period_-_Nataraja%2C_Shiva_as_the_Lord_of_Dance_-_1930.331_-_Cleveland_Museum_of_Art.tif.jpg" alt="Nataraja, Shiva as the Lord of Dance by Chola bronze caster"></div>
       <p class="num">Room 9</p>
       <h2>India &amp; South Asia</h2>
       <p class="dates">250 BCE–1900</p>
@@ -172,12 +181,15 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
       <p class="pic">Nataraja, Shiva as the Lord of Dance, Chola bronze caster</p>
     </a>
   </nav>
+  <details class="wing-text"><summary>About the South Asia wing</summary>
+    <p>In South Asia, rulers and donors paid for art as acts of piety and power, from the stone pillars of the Maurya emperor Ashoka in the 200s BCE to the carved stupas at Sanchi and the painted caves at Ajanta. Monks and merchants carried Buddhism and its images to Sri Lanka, Central Asia, China and Southeast Asia, and printed and dyed cotton from Gujarat and the Coromandel coast was traded from Egypt to Indonesia. From the 400s kings built stone temples where worshippers came for darshan, to see the image of the god and be seen by it, and from 1526 the Mughal emperors brought Persian painters to a court workshop whose portraits Rembrandt copied in Amsterdam in the late 1650s. In the late 1700s, as the East India Company took power in Bengal by war and by collecting its taxes, painters who had worked for Mughal and regional courts painted for Company officials instead. Works left by conquest, from Tipu Sultan’s tiger organ seized at Seringapatam in 1799 to the Koh-i-Noor diamond taken from the Sikh kingdom in 1849, and in 1879 the Company’s India Museum in London passed 19,228 objects to the museum now called the V&amp;A.</p>
+  </details>
   </section>
   <section class="wing">
   <h2 class="wing-name">Southeast Asia <a class="hear" href="court-music.html#southeast_asia">Court music</a></h2>
   <nav class="plan" style="--n:1" aria-label="Southeast Asia rooms">
     <a class="room" href="southeast.html">
-      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Angkor_Wat_with_its_reflection_%28cropped%29.jpg/960px-Angkor_Wat_with_its_reflection_%28cropped%29.jpg" alt="Angkor Wat by Khmer builders" loading="lazy"></div>
+      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Angkor_Wat_with_its_reflection_%28cropped%29.jpg/960px-Angkor_Wat_with_its_reflection_%28cropped%29.jpg" alt="Angkor Wat by Khmer builders"></div>
       <p class="num">Room 10</p>
       <h2>Southeast Asia</h2>
       <p class="dates">900 BCE–1905</p>
@@ -185,12 +197,15 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
       <p class="pic">Angkor Wat, Khmer builders</p>
     </a>
   </nav>
+  <details class="wing-text"><summary>About the Southeast Asia wing</summary>
+    <p>In Southeast Asia, bronze drums and burial jars came long before writing. From the 600s, kings took up Hindu and Buddhist ideas from India and built temples of their own, from Borobudur in Java to Angkor Wat in Cambodia and the thousands of temples at Bagan in Myanmar, and in the 800s Balaputradeva, a king of Srivijaya on Sumatra, had a Buddhist monastery built at Nalanda in India. In Vietnam, the Đại Việt court took Buddhism and Chinese forms and made them its own. Women wove and dyed cloth such as batik, ikat and tais, and shadow puppets, lacquer and gold ranked alongside painting. Spain and then the United States ruled the Philippines, the Netherlands ruled Indonesia, Britain took Burma and Malaya, and France took Vietnam, Cambodia and Laos; Siam alone kept its independence. From 1830 the Dutch forced Javanese villagers to grow coffee, sugar and indigo for export, and at its peak this system paid for half the Dutch state&#x27;s revenue. British troops seized the royal collection at Mandalay in 1885, and Dutch troops looted the palace at Cakranegara on Lombok in 1894. In 1857 Raden Saleh painted The Arrest of Prince Diponegoro, which scholars read as an answer to a Dutch version by Nicolaas Pieneman, and in 1884 Juan Luna won a gold medal in Madrid for the Spoliarium. In 2023 the Netherlands returned the Lombok treasure, 335 objects, and four statues from Singasari to Indonesia.</p>
+  </details>
   </section>
   <section class="wing">
   <h2 class="wing-name">Africa <a class="hear" href="court-music.html#africa">Court music</a></h2>
   <nav class="plan" style="--n:1" aria-label="Africa rooms">
     <a class="room" href="africa.html">
-      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/British_Museum_Room_25_Head_of_a_king_Ife_17022019_5147.jpg/960px-British_Museum_Room_25_Head_of_a_king_Ife_17022019_5147.jpg" alt="Head of a Ruler, probably an Ooni (king) of Ife by Ife brass caster, royal court" loading="lazy"></div>
+      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/British_Museum_Room_25_Head_of_a_king_Ife_17022019_5147.jpg/960px-British_Museum_Room_25_Head_of_a_king_Ife_17022019_5147.jpg" alt="Head of a Ruler, probably an Ooni (king) of Ife by Ife brass caster, royal court"></div>
       <p class="num">Room 11</p>
       <h2>Africa</h2>
       <p class="dates">28,000 BCE–1935</p>
@@ -198,12 +213,15 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
       <p class="pic">Head of a Ruler, probably an Ooni (king) of Ife, Ife brass caster, royal court</p>
     </a>
   </nav>
+  <details class="wing-text"><summary>About the Africa wing</summary>
+    <p>In Africa, people painted and carved on rock for tens of thousands of years. On the Nile, Egypt and the Nubian kingdom of Kush built pyramids and temples, and in the 700s BCE the kings of Kush conquered Egypt and ruled it as pharaohs. Brass casters at Ife and Benin made royal heads and plaques, Ethiopian painters filled Gospel books and church walls, and from the late 1400s carvers in Sierra Leone and Benin made ivory saltcellars for Portuguese buyers. The Atlantic slave trade carried millions of Africans to the Americas, and after the Berlin Conference of 1884–85 seven European powers took all of Africa but Ethiopia and Liberia by 1914. Picasso and other painters in Paris took forms from masks brought to France through colonial channels, while in 1928 Mahmoud Mokhtar unveiled Egypt’s Awakening in Cairo, paid for by public subscription after the 1919 revolution against British rule. Works left by conquest, from the Abomey treasury taken by French troops in 1892 to the Benin bronzes seized by British troops in 1897, and a 2018 report to the French president cited experts’ estimate that over 90 percent of sub-Saharan Africa’s heritage is held outside the continent; France returned 26 Abomey treasures in 2021 and Germany began returning Benin bronzes to Nigeria in 2022.</p>
+  </details>
   </section>
   <section class="wing">
   <h2 class="wing-name">The Americas</h2>
   <nav class="plan" style="--n:1" aria-label="The Americas rooms">
     <a class="room" href="americas.html">
-      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Piedra_del_Sol.tif/lossy-page1-960px-Piedra_del_Sol.tif.jpg" alt="Aztec Sun Stone by Mexica sculptors of Tenochtitlan" loading="lazy"></div>
+      <div class="frame"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Piedra_del_Sol.tif/lossy-page1-960px-Piedra_del_Sol.tif.jpg" alt="Aztec Sun Stone by Mexica sculptors of Tenochtitlan"></div>
       <p class="num">Room 12</p>
       <h2>The Americas</h2>
       <p class="dates">1200 BCE–1913</p>
@@ -211,12 +229,15 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
       <p class="pic">Aztec Sun Stone, Mexica sculptors of Tenochtitlan</p>
     </a>
   </nav>
+  <details class="wing-text"><summary>About the Americas wing</summary>
+    <p>In the Americas, the Olmec carved colossal heads more than three thousand years ago, and Maya courts at Tikal, Copán and Yaxchilan built temples and carved their histories in stone and wood. In the Andes, weavers made cloth the most valued art, and from the 1400s the Inca ruled from Cusco, built in fitted stone and kept records on knotted cords called khipu. The Mexica ruled from Tenochtitlan until Spanish forces and their Indigenous allies took the city in 1521, and Spain took the Inca empire in the 1530s. Spain and Portugal ruled most of Central and South America for three centuries, and Indigenous and mestizo artists painted for churches in Cusco and Mexico City. By 1600 Spanish America had shipped 25,000 tons of silver to Spain, and maize and potatoes became staple crops around the world. The United States drove nations such as the Diné and Lakota from their lands, Canada banned the potlatch of the Kwakwaka&#x27;wakw and their neighbors, and those nations kept weaving, beading and carving. In the 1800s painters such as José María Velasco and Francisco Oller painted their own countries. Works left by conquest, excavation and seizure, from Moctezuma&#x27;s headdress to the Kwakwaka&#x27;wakw regalia seized in 1922; Yale returned its Machu Picchu collection to Peru in 2011–12, and Mexico recovered 14,048 objects from abroad between 2018 and 2024.</p>
+  </details>
   </section>
   <section class="wing">
   <h2 class="wing-name">Music Hall</h2>
   <nav class="plan" style="--n:1" aria-label="Music Hall rooms">
     <a class="room" href="court-music.html">
-      <div class="frame"><img src="music/hall.jpg" alt="Music room, Ali Qapu Palace, Isfahan" loading="lazy"></div>
+      <div class="frame"><img src="music/hall.jpg" alt="Music room, Ali Qapu Palace, Isfahan"></div>
       <p class="num">Music Hall</p>
       <h2>Court Music</h2>
       <p class="dates">Europe, Asia and Africa</p>
@@ -225,8 +246,15 @@ h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 
       <p class="count">Photo: reibai, CC BY 2.0</p>
     </a>
   </nav>
+  <details class="wing-text"><summary>About the Music Hall</summary>
+    <p>The Music Hall is a map of 41 royal courts and the music they paid for, from Versailles and Topkapı to Fatehpur Sikri, the Forbidden City, the kraton of Yogyakarta and the Asante court at Kumasi. It follows Lewis Peterman’s seminar Court Music of Eurasia (San Diego State University, 2008), and links courts to works in these rooms from the same court.</p>
+  </details>
   </section>
+  <section class="about">
+  <h2>About the collection</h2>
+    <p>720 works in twelve rooms of 60. Four rooms follow European painting from 1400 to 1900. The East Asia wing holds a thousand years of Chinese painting and calligraphy, twelve centuries of Japanese art, and fifteen centuries of Korean art. The Islamic World wing holds twelve centuries of art from Spain and West Africa to Iran, Central Asia and Indonesia. The South Asia wing holds more than two thousand years of art from India, Pakistan, Bangladesh, Sri Lanka, Nepal and Tibet. The Southeast Asia wing holds nearly three thousand years of art from Myanmar, Thailand, Laos, Cambodia, Vietnam, Malaysia, Indonesia, Timor-Leste and the Philippines. The Africa wing holds some thirty thousand years of art from across the continent, from the rock paintings of Namibia and the Sahara to Egypt and Nubia on the Nile, the kingdoms of West and Central Africa, Ethiopia, Great Zimbabwe and the Swahili coast. The Americas wing holds some three thousand years of art from Alaska to the Andes, from the Olmec and the Maya to the Inca, the Mexica, the peoples of North America and the painters of the colonial and independent Americas.</p>
   <p class="bycity"><a href="cities.html">Where they hang now, by city</a></p>
+  </section>
 </div>
 </body>
 </html>
