@@ -675,6 +675,8 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/
 #top button{background:none;border:1px solid transparent;color:var(--text);font:inherit;font-size:14px;padding:5px 9px;border-radius:4px;cursor:pointer;white-space:nowrap}
 #top button[data-go]{border-bottom:2px solid var(--accent,var(--gold2))}
 #top button:hover,#top button.on{background:var(--s2);border-color:var(--border)}
+#top .home{color:var(--dim);font-size:14px;text-decoration:none;white-space:nowrap}
+#top .home:hover{color:var(--gold)}
 #top .sep{width:1px;height:22px;background:var(--border);flex:none}
 #q{width:170px;background:var(--s2);border:1px solid var(--border);color:var(--text);font:inherit;font-size:14px;padding:6px 10px;border-radius:4px}
 #map{position:fixed;top:var(--th);left:0;bottom:0;right:var(--pw);background:#1b1f27}
@@ -735,6 +737,7 @@ th{background:var(--s2);color:var(--gold);font-weight:normal}
 </style></head>
 <body>
 <div id="top">
+  <a class="home" href="index.html">Floor plan</a><span class="sep"></span>
   <span class="brand" data-go="intro">Court Music Atlas</span>
   <nav>
     <button data-page="intro">About</button><span class="sep"></span>
