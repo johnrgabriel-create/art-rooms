@@ -717,6 +717,8 @@ th{background:var(--s2);color:var(--gold);font-weight:normal}
 .courts{display:grid;gap:12px}
 .court{background:var(--s2);border:1px solid var(--border);border-radius:6px;overflow:hidden;scroll-margin-top:50px}
 .court img{display:block;width:100%;max-height:230px;object-fit:cover;background:#000}
+.court > img,.court h3{cursor:pointer}
+.court h3:hover{color:#fff;text-decoration:underline;text-decoration-color:var(--dim);text-underline-offset:3px}
 .court-text{padding:8px 12px 10px}
 .court h3{margin:0 0 4px;font:600 19px var(--serif);color:#f3ecdf}
 .court h3 span{color:var(--dim);font-size:13.5px;margin-left:4px}
@@ -1373,7 +1375,7 @@ function show(pid,courtId,fly){
   results.hidden=true;
   $$('.panel').forEach(s=>s.hidden=s.id!=='p-'+pid);
   $$('#top [data-page],#top [data-go]').forEach(b=>b.classList.toggle('on',(b.dataset.page||b.dataset.go)===pid));
-  PINS.forEach(p=>markers[p.id].setStyle({radius:p.id===courtId?11:7,weight:p.id===courtId?3:1.5,color:p.id===courtId?'#fff':'#14110e'}));
+  highlight(courtId);
   if(fly!==false){
     if(courtId&&markers[courtId]&&window.innerWidth>760) map.flyTo(markers[courtId].getLatLng(),Math.max(map.getZoom(),5),{duration:.8});
     else if(REGIONS.includes(pid)&&pid!==current) map.flyToBounds(regionBounds(pid),{padding:fitPad(),maxZoom:6,duration:.8});
@@ -1382,6 +1384,16 @@ function show(pid,courtId,fly){
   if(courtId){const el=document.getElementById('c-'+courtId);if(el){el.scrollIntoView({block:'start'});flash(el);}}
   else side.scrollTop=0;
 }
+// Clicking a court's photo or name centres the map on its pin.
+function highlight(courtId){PINS.forEach(p=>markers[p.id].setStyle({radius:p.id===courtId?11:7,weight:p.id===courtId?3:1.5,color:p.id===courtId?'#fff':'#14110e'}));}
+side.addEventListener('click',ev=>{
+  const t=ev.target.closest('.court > img, .court h3');if(!t)return;
+  const id=t.closest('.court').id.slice(2),m=markers[id];if(!m)return;
+  highlight(id);
+  map.flyTo(m.getLatLng(),Math.max(map.getZoom(),6),{duration:.8});
+  map.once('moveend',()=>m.openTooltip());
+  history.replaceState(null,'','#'+current+'/'+id);
+});
 function flash(el){el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash');}
 function go(h){if(location.hash==='#'+h)route();else location.hash=h;}
 function route(){
