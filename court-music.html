@@ -739,8 +739,8 @@ th{background:var(--s2);color:var(--gold);font-weight:normal}
 #results .where{font-size:12.5px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
 #results mark{background:#4a3d15;color:#fff}
 .leaflet-container{font-family:var(--sans);background:#1b1f27}
-.artpin span{display:block;width:10px;height:10px;margin:1px;transform:rotate(45deg);background:var(--gold);border:1.5px solid #14110e}
-.artpin:hover span{background:#fff}
+.artpin span{display:block;width:13px;height:13px;margin:2px;transform:rotate(45deg);background:#f0c860;border:2px solid #fff;box-shadow:0 0 0 1.5px #14110e,0 0 8px rgba(240,200,96,.7)}
+.artpin:hover span{background:#fff;border-color:#f0c860}
 .leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--s1);color:var(--text);border:1px solid var(--border)}
 .leaflet-popup-content{margin:10px 14px;font-size:13.5px;line-height:1.45}
 .leaflet-popup-content .made{font:600 16px var(--serif);color:var(--gold);margin-bottom:4px}
@@ -1379,7 +1379,7 @@ const artLayer=L.layerGroup(),courtName=Object.fromEntries(PINS.map(p=>[p.id,p])
 const near=(a,b)=>Math.abs(a.lat-b.lat)<.3&&Math.abs(a.lng-b.lng)<.3;
 ARTPINS.forEach(a=>{
   const onCourt=PINS.some(p=>near(p,a));  // made in a court city: sit just beside the court's pin
-  const icon=L.divIcon({className:'artpin',html:'<span></span>',iconSize:[12,12],iconAnchor:onCourt?[-5,17]:[6,6]});
+  const icon=L.divIcon({className:'artpin',html:'<span></span>',iconSize:[17,17],iconAnchor:onCourt?[-6,22]:[8,8]});
   const box=document.createElement('div');
   const h=document.createElement('div');h.className='made';h.textContent='Made in '+a.place;box.append(h);
   a.works.forEach(w=>{
@@ -1387,9 +1387,9 @@ ARTPINS.forEach(a=>{
     l.href=w.href;l.textContent=w.title;d.append(l,' · '+w.room);
     const f=document.createElement('div');f.className='for';
     f.textContent=(w.note?w.note+' ':'')+'Linked to '+w.courts.map(c=>courtName[c].name).join(', ')+'.';d.append(f);box.append(d);
-    w.courts.forEach(c=>{if(!near(courtName[c],a))L.polyline([[a.lat,a.lng],[courtName[c].lat,courtName[c].lng]],{color:'#c9a45c',weight:1.2,opacity:.7,dashArray:'4 5',interactive:false}).addTo(artLayer);});
+    w.courts.forEach(c=>{if(!near(courtName[c],a))L.polyline([[a.lat,a.lng],[courtName[c].lat,courtName[c].lng]],{color:'#f0c860',weight:2,opacity:.9,dashArray:'5 5',interactive:false}).addTo(artLayer);});
   });
-  L.marker([a.lat,a.lng],{icon}).bindTooltip(a.works.length>1?a.works.length+' works made in '+a.place:a.works[0].title,{direction:'top',offset:onCourt?[6,-17]:[0,-6]})
+  L.marker([a.lat,a.lng],{icon}).bindTooltip(a.works.length>1?a.works.length+' works made in '+a.place:a.works[0].title,{direction:'top',offset:onCourt?[8,-22]:[0,-8]})
     .bindPopup(box,{maxWidth:280}).addTo(artLayer);
 });
 if(ARTPINS.length){artLayer.addTo(map);layers.addOverlay(artLayer,'Where the art was made');}
